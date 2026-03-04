@@ -1,0 +1,246 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: #eef1f7;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+/* ===== HERO SECTION ===== */
+header {
+    position: relative;
+    text-align: center;
+    padding: 180px 20px 160px;
+    color: white;
+    background: url('hero.jpg') center/cover no-repeat;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 750px;
+    margin: auto;
+}
+
+header h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.highlight {
+    color: #9b5de5;
+}
+
+.hero-subtitle {
+    margin-top: 22px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    padding: 18px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #374151;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #7c3aed;
+}
+
+/* ===== SECTION BASE ===== */
+section {
+    position: relative;
+    padding: 120px 20px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Background image layer */
+section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('section-bg.jpg') center/cover no-repeat;
+    opacity: 0.35;   /* makes it subtle */
+    z-index: 0;
+}
+
+/* Mirror every second section vertically */
+section:nth-of-type(even)::before {
+    transform: scaleY(-1);
+}
+
+/* Optional dark overlay for better contrast */
+section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.6),
+        rgba(255,255,255,0.7)
+    );
+    z-index: 0;
+}
+
+/* Card container */
+.section-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    background: white;
+    padding: 60px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+
+/* Main section card wrapper */
+section {
+    display: flex;
+    justify-content: center;
+}
+
+section > div,
+section > h2,
+section > p {
+    position: relative;
+}
+
+/* Create card container */
+/* ===== SECTION BACKGROUND AREAS ===== */
+section {
+    padding: 120px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Background colors */
+#about { background: #f8fafc; }
+#skills { background: #ffffff; }
+#projects { background: #f3f4f6; }
+#seminar { background: #ffffff; }
+#contact { background: #f8fafc; }
+
+
+
+/* Headings */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* ===== SKILLS ===== */
+.skill {
+    margin-bottom: 28px;
+}
+
+.progress {
+    background: #e5e7eb;
+    height: 8px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 8px;
+    background: linear-gradient(90deg, #5f72ff, #9b5de5);
+    border-radius: 50px;
+    transition: width 1.2s ease-in-out;
+}
+
+/* ===== INNER CARDS (Projects & Seminar) ===== */
+.project,
+.seminar-card {
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.project:hover,
+.seminar-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: #7c3aed;
+    color: white;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #5b21b6;
+    transform: translateY(-3px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #111827;
+    color: #9ca3af;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    section::after {
+        top: 40px;
+        bottom: 40px;
+    }
+    .section-card {
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 2.4rem;
+    }
+}
